@@ -1,4 +1,5 @@
 Расширение работает на странице: https://myshows.me/profile/
+![](record.gif)
 
 # Установка
 
