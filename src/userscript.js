@@ -15,7 +15,7 @@
 
   function formatSize(size) {
     const postfixIndex = Math.floor(Math.log(size) / Math.log(1024));
-    const value = (size / Math.pow(1024, i)).toFixed(2) * 1;
+    const value = (size / Math.pow(1024, postfixIndex)).toFixed(2) * 1;
 
     return `${value} ${SIZE_POSTFIX[postfixIndex]}`;
   }
