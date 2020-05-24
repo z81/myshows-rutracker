@@ -1,0 +1,22 @@
+{
+  "name": "myshows_rutracker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsс",
+    "start": "node dist/app.js",
+    "watch": "concurrently --kill-others \"tsc -w\" \"nodemon dist/app.js\""
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "fastify": "^2.13.0",
+    "rutracker-api": "^1.1.1",
+    "socks-proxy-agent": "^5.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.3",
+    "typescript": "^3.8.3"
+  }
+}
