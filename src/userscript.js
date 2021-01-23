@@ -147,7 +147,7 @@
     }
   };
 
-  // bind lay icon events
+  // bind play icon events
   document.querySelectorAll(".showHeader.fsHeader").forEach((h) => {
     let node = h;
     const name = h.querySelector(".showHeaderName .subHeader").innerText;

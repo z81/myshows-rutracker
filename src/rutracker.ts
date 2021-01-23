@@ -1,5 +1,4 @@
 import RutrackerApi from "rutracker-api";
-import SocksProxyAgent from "socks-proxy-agent";
 import { config } from "./config";
 
 const RANGE_REG_EXP = [
@@ -15,10 +14,6 @@ const QUALITY_REG_EX = /(WEB-DLRip|HDTVRip|BDRip-AVC|BDRip|HDTV|BDRemux|WEB-DL)[
 
 export class Rutracker {
   private rutracker = new RutrackerApi();
-
-  constructor() {
-    this.proxyMonkeyPatch();
-  }
 
   public login() {
     return this.rutracker.login(config.rutracker.auth);
@@ -95,15 +90,5 @@ export class Rutracker {
     );
 
     return result;
-  }
-
-  private proxyMonkeyPatch() {
-    const httpsAgent = SocksProxyAgent(config.proxy);
-    this.rutracker.pageProvider.request = this.rutracker.pageProvider.request.create(
-      {
-        httpsAgent,
-        httpAgent: httpsAgent,
-      }
-    );
   }
 }
